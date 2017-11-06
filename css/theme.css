@@ -9133,6 +9133,49 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
+.erply-navbar {
+  background: #18b1e7; }
+
+.container-test {
+  width: 100%; }
+
+.menu-container {
+  float: left; }
+  .menu-container a {
+    color: white; }
+  .menu-container #main-menu {
+    margin-top: 8px; }
+
+.settings-container {
+  float: right;
+  display: flex;
+  overflow: hidden; }
+  .settings-container .social-block {
+    display: flex;
+    position: relative;
+    right: 0;
+    overflow: hidden; }
+    .settings-container .social-block .social {
+      flex: 1;
+      width: 45px;
+      height: 100%;
+      padding: 12px 10px 10px 10px;
+      color: white; }
+  .settings-container .shrink {
+    right: 500px;
+    transition: right .5s ease-out; }
+
+.search-block {
+  border-left: 3px solid white;
+  padding: 8px; }
+  .search-block .search-toggle {
+    width: 45px;
+    height: 100%;
+    border: none;
+    background: url("../img/search.png") no-repeat center center; }
+  .search-block .close-toggle {
+    background: url("../img/cancel.png") no-repeat center center; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

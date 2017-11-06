@@ -1,1 +1,53 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+//Header
+.erply-navbar {
+  background: $erply-blue;
+}
+.container-test {
+  width: 100%;
+}
+.menu-container {
+  float: left;
+  a {
+    color: white;
+  }
+  #main-menu {
+    margin-top: 8px;
+  }
+}
+.settings-container {
+  float: right;
+  display: flex;
+  overflow: hidden;
+  .social-block {
+    display: flex;
+    position: relative;
+    right: 0;
+    overflow: hidden;
+    .social {
+      flex: 1;
+      width: 45px;
+      height: 100%;
+      padding: 12px 10px 10px 10px;
+      color: white;
+    }
+  }
+  .shrink {
+    right: 500px;
+    transition: right .5s ease-out;
+  }
+}
+.search-block {
+  border-left: 3px solid white;
+  padding: 8px;
+  .search-toggle {
+    width: 45px;
+    height: 100%;
+    border: none;
+    background: url("../img/search.png") no-repeat center center;
+  }
+  .close-toggle {
+    background: url("../img/cancel.png") no-repeat center center;
+  }
+}

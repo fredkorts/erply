@@ -33,46 +33,37 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content',
 		'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-md erply-navbar">
 
 		<?php if ( 'container' == $container ) : ?>
-			<div class="container">
+			<div class="container-test">
 		<?php endif; ?>
+                <div class="menu-container">
+                    <!-- The WordPress Menu goes here -->
+                    <?php wp_nav_menu(
+                        array(
+                            'theme_location'  => 'primary',
+                            'container_class' => 'collapse navbar-collapse',
+                            'container_id'    => 'navbarNavDropdown',
+                            'menu_class'      => 'navbar-nav',
+                            'fallback_cb'     => '',
+                            'menu_id'         => 'main-menu',
+                            'walker'          => new WP_Bootstrap_Navwalker(),
+                        )
+                    ); ?>
+                </div>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
-
-						<?php if ( is_front_page() && is_home() ) : ?>
-
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-							
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						
-						<?php endif; ?>
-						
-					
-					<?php } else {
-						the_custom_logo();
-					} ?><!-- end custom logo -->
-
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'walker'          => new WP_Bootstrap_Navwalker(),
-					)
-				); ?>
+                <div class="settings-container">
+                    <div class="social-block">
+                        <a href="#" class="social" id="facebook"><img src="wp-content/themes/erply/img/facebook.png"></a>
+                        <a href="#" class="social" id="twitter"><img src="wp-content/themes/erply/img/twitter.png"></a>
+                        <a href="#" class="social" id="google"><img src="wp-content/themes/erply/img/google.png"></a>
+                        <a href="#" class="social" id="linkedin"><img src="wp-content/themes/erply/img/linkedin.png"></a>
+                    </div>
+                    <div class="search-block">
+                        <input type='button' class='search-toggle'/>
+                    </div>
+                </div>
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>
