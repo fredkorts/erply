@@ -43,6 +43,7 @@ var browserSync = require('browser-sync').create();
 var del = require('del');
 var cleanCSS = require('gulp-clean-css');
 var gulpSequence = require('gulp-sequence');
+var autoprefixer = require('gulp-autoprefixer');
 
 
 // Run:
@@ -108,6 +109,7 @@ gulp.task('sass', function () {
             }
         }))
         .pipe(sass())
+        .pipe(autoprefixer('last 2 version'))
         .pipe(gulp.dest('./css'))
         .pipe(rename('custom-editor-style.css'))
     return stream;

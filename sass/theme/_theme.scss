@@ -1,19 +1,131 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
 //Header
-.erply-navbar {
-  background: $erply-blue;
+.site-title {
+  display: none;
 }
-.container-test {
+.site-description {
+  display: none;
+}
+#wrapper-navbar {
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 1000;
+}
+#nav-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 6px;
+  margin-right: 2em;
+  z-index: 1001;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  span {
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: white;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  span:nth-child(1) {
+    top: 0px;
+  }
+  span:nth-child(2) {
+    top: 12px;
+  }
+  span:nth-child(3) {
+    top: 25px;
+  }
+}
+#nav-icon.open {
+  span:nth-child(1) {
+    top: 14px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  span:nth-child(3) {
+    top: 14px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+}
+.erply-navbar {
+  padding: 1em .5em;
+  width: 100%;
+  background: $erply-blue;
+  transition: background-color .3s ease-out;
+}
+.secondary-menu {
+  width: 100%;
+  min-height: 20px;
+  background: $erply-dark-blue;
+  .secondary-wrapper {
+    display: flex;
+  }
+  .links-wrapper {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: .5em 0;
+      li {
+        display: inline-block;
+        color: white;
+      }
+    }
+    margin-right: 1em;
+  }
+  .button-wrapper {
+    position: absolute;
+    right: 1em;
+  }
+}
+.container-wrapper {
   width: 100%;
 }
 .menu-container {
   float: left;
+  display: flex;
   a {
     color: white;
+    font-family: $font__main;
+    font-size: $font__large;
   }
-  #main-menu {
-    margin-top: 8px;
+  .custom-logo-link {
+    width: 150px;
+    z-index: 1001;
+  }
+}
+.main-menu {
+  .nav-link {
+    &:hover {
+      text-decoration: underline !important;
+    }
   }
 }
 .settings-container {
@@ -37,10 +149,34 @@
     right: 500px;
     transition: right .5s ease-out;
   }
+  .enlarge {
+    display: block !important;
+  }
+}
+.assistive-text {
+  display: none;
+}
+#searchsubmit {
+  display: none;
+}
+#searchform {
+  display: none;
+  .input-group {
+    height: 100%;
+    .field {
+      background: none;
+      border: none;
+      color: white;
+      border-bottom: 1px solid white;
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
 }
 .search-block {
-  border-left: 3px solid white;
   padding: 8px;
+  display: flex;
   .search-toggle {
     width: 45px;
     height: 100%;
@@ -49,5 +185,201 @@
   }
   .close-toggle {
     background: url("../img/cancel.png") no-repeat center center;
+  }
+}
+.toggle-menu {
+  width: 300px;
+  height: 100%;
+  left: -500px;
+  transition: left .5s ease-in;
+  background: $erply-dark-blue;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  #sliderList {
+    display: none;
+    margin-top: 80px;
+    #slider-menu {
+      list-style-type: none;
+      padding-left: 0;
+      li {
+        font-family: Avenir;
+        font-size: 18px;
+        a {
+          color: white;
+        }
+      }
+      .dropdown-menu {
+        float: none;
+        position: relative;
+        background: none;
+        border: none;
+        padding: 0 0 0 1em;
+        li {
+          font-size: 14px;
+          a {
+            padding: .5em;
+          }
+        }
+      }
+      .dropdown-button {
+        float: right;
+        width: 30px;
+        height: 30px;
+      }
+    .dropdown-toggle {
+      &::after {
+        display: none;
+      }
+    }
+      .arrow-container {
+        float: right;
+        width: 30px;
+        height: 30px;
+        border: none;
+        transition: transform .2s ease-in;
+        position: relative;
+        .arrow-icon {
+          width: 100%;
+          height: 4px;
+          position: absolute;
+          top: 10px;
+          background: white;
+        }
+      }
+    }
+  }
+}
+.open-menu {
+  left: 0;
+  transition: left .5s ease-out;
+}
+.turn {
+  transform: rotate(90deg);
+  transition: transform .2s ease-in;
+}
+
+//Buttons
+.erply-btn {
+  background: none;
+  transition: background .25s ease-in;
+  border: 1px solid white;
+  padding: .4em 1em;
+  color: white;
+  border-radius: 0;
+  &:hover {
+    background: $erply-blue;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    transition-property: color;
+    transition-duration: 0.3s;
+  }
+}
+
+//Content
+.content-area, .wrapper {
+  margin-top: 150px;
+}
+.blog-feed {
+  min-height: 500px;
+}
+.blog-posts {
+  min-height: 500px;
+}
+//Trending row
+.logo-area {
+  background: $erply-fall;
+  width: 100%;
+  padding: 1em 2em;
+  min-height: 250px;
+}
+.trending-row {
+  display: flex;
+  margin-bottom: .5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  h2 {
+    font-size: $font__small;
+    color: $erply-dark-blue;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 2em;
+    margin-bottom: 0 !important;
+    padding: .3em;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-right: .8em;
+      a {
+        font-size: $font__small;
+        font-weight: 700;
+        color: $erply-blue;
+      }
+    }
+  }
+}
+//Blog feed
+.feed-items {
+  padding-top: 1em;
+  .feed-item {
+    article {
+      margin-bottom: 2em;
+      h2 {
+        font-size: $font__feed;
+        color: $erply-blue;
+        font-family: $font__main;
+      }
+      .data-container {
+        display: flex;
+        .category {
+          flex: 1;
+          font-size: 14px;
+          color: $erply-dark-blue;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-right: 2em;
+          margin-bottom: 0!important;
+        }
+        .time-stamp {
+          font-family: $font__main;
+          color: $erply-dark-blue;
+        }
+      }
+    }
+  }
+}
+//Main story
+.main-story {
+  min-height: 500px;
+  width: 100%;
+  margin-bottom: 2em;
+  position: relative;
+  h2 {
+    color: white;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .story-image {
+    position: absolute;
+    border: 3px solid $erply-fall;
+    top: 0;
+    left: 0;
+  }
+  .story-headline {
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    h2 {
+      padding: 1em;
+      font-weight: bold;
+    }
   }
 }

@@ -36,9 +36,30 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<nav class="navbar navbar-expand-md erply-navbar">
 
 		<?php if ( 'container' == $container ) : ?>
-			<div class="container-test">
+			<div class="container-wrapper">
 		<?php endif; ?>
+                <div class="col-md-3 col-sm-2 col-xs-2 site-branding ">
+                    <?php
+                    if ( is_front_page() && is_home() ) : ?>
+                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php else : ?>
+                        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                        <?php
+                    endif;
+
+                    $description = get_bloginfo( 'description', 'display' );
+                    if ( $description || is_customize_preview() ) : ?>
+                        <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                        <?php
+                    endif; ?>
+                </div><!-- .site-branding -->
                 <div class="menu-container">
+                    <div id="nav-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <?php the_custom_logo(); ?>
                     <!-- The WordPress Menu goes here -->
                     <?php wp_nav_menu(
                         array(
@@ -60,14 +81,47 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <a href="#" class="social" id="google"><img src="wp-content/themes/erply/img/google.png"></a>
                         <a href="#" class="social" id="linkedin"><img src="wp-content/themes/erply/img/linkedin.png"></a>
                     </div>
+                    <?php get_search_form( true );?>
                     <div class="search-block">
                         <input type='button' class='search-toggle'/>
                     </div>
+                </div>
+                <div class="toggle-menu">
+                    <?php wp_nav_menu(
+                        array(
+                            'theme_location'  => 'slider',
+                            'container_class' => 'slide-menu-container',
+                            'container_id'    => 'sliderList',
+                            'menu_class'      => 'slider-nav',
+                            'fallback_cb'     => '',
+                            'menu_id'         => 'slider-menu',
+                            'walker'          => new WP_Bootstrap_Navwalker(),
+                        )
+                    ); ?>
                 </div>
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>
 
-		</nav><!-- .site-navigation -->
+		</nav>
+        <div class="secondary-menu navbar">
+            <div class="secondary-wrapper">
+                <div class="links-wrapper">
+                    <ul>
+                        <li>Call us today at 1-855-463-7759</li>
+                        <li>|</li>
+                        <li>Support</li>
+                        <li>|</li>
+                        <li>Blog</li>
+                        <li>|</li>
+                        <li>Pricing</li>
+                    </ul>
+                </div>
+                <div class="button-wrapper">
+                    <a href="#" class="bttn">Free Demo</a>
+                    <a href="#" class="bttn">Login</a>
+                </div>
+            </div>
+        </div><!-- .site-navigation -->
 
 	</div><!-- .wrapper-navbar end -->
