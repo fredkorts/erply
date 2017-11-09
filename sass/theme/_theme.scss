@@ -16,7 +16,7 @@
 #nav-icon {
   width: 40px;
   height: 40px;
-  margin-top: 6px;
+  margin-top: 10px;
   margin-right: 2em;
   z-index: 1001;
   -webkit-transform: rotate(0deg);
@@ -28,6 +28,9 @@
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+  @media screen and (min-width: $xs_breakpoint) {
+    margin-top: 6px;
+  }
   span {
     display: block;
     position: absolute;
@@ -85,6 +88,11 @@
   width: 100%;
   min-height: 20px;
   background: $erply-dark-blue;
+  z-index: 999;
+  display: none;
+  @media screen and (min-width: $xs_breakpoint) {
+    display: block;
+  }
   .secondary-wrapper {
     display: flex;
   }
@@ -120,6 +128,12 @@
     width: 150px;
     z-index: 1001;
   }
+  #navbarNavDropdown {
+    display: none !important;
+    @media screen and (min-width: $md_breakpoint) {
+      display: flex !important;
+    }
+  }
 }
 .main-menu {
   .nav-link {
@@ -130,8 +144,11 @@
 }
 .settings-container {
   float: right;
-  display: flex;
+  display: none;
   overflow: hidden;
+  @media screen and (min-width: $xs_breakpoint) {
+    display: flex;
+  }
   .social-block {
     display: flex;
     position: relative;
@@ -196,9 +213,30 @@
   position: fixed;
   top: 0;
   z-index: 1000;
+  .mobile-wrapper {
+    margin-top: 100px;
+    .button-wrapper {
+      text-align: center;
+      margin-bottom: 1em;
+      display: block;
+      @media screen and (min-width: $xs_breakpoint) {
+        display: none;
+      }
+    }
+    .social-block {
+      text-align: center;
+      margin: 1em 0;
+      display: block;
+      @media screen and (min-width: $xs_breakpoint) {
+        display: none;
+      }
+      a {
+        margin: .5em;
+      }
+    }
+  }
   #sliderList {
     display: none;
-    margin-top: 80px;
     #slider-menu {
       list-style-type: none;
       padding-left: 0;
@@ -289,7 +327,7 @@
 }
 //Trending row
 .logo-area {
-  background: $erply-fall;
+  background: $erply-blue;
   width: 100%;
   padding: 1em 2em;
   min-height: 250px;
@@ -369,7 +407,6 @@
   }
   .story-image {
     position: absolute;
-    border: 3px solid $erply-fall;
     top: 0;
     left: 0;
   }
@@ -378,8 +415,79 @@
     left: 0;
     bottom: -50px;
     h2 {
-      padding: 1em;
+      margin: 1em;
+      padding-left: 1em;
       font-weight: bold;
+      border-left: 5px solid $erply-fall;
+      text-shadow: 10px 10px 80px #000;
     }
   }
+}
+.secondary-stories {
+  padding-top: 2em;
+  .row {
+    margin-right: 0;
+  }
+  article {
+    margin-bottom: 1em;
+    .article-image {
+      height: 300px;
+      width: 100%;
+      position: relative;
+      h2 {
+        position: absolute;
+        bottom: 15px;
+        color: white;
+        font-weight: bold;
+        border-left: 5px solid $erply-fall;
+        text-shadow: 10px 10px 80px #000;
+        margin: 1em;
+        padding-left: .5em;
+      }
+      p {
+        position: absolute;
+        bottom: 0;
+        color: white;
+        font-style: italic;
+        font-size: 20px;
+        margin: 1em;
+        padding-left: 1.75em;
+        font-weight: 500;
+      }
+    }
+  }
+}
+.popular-topics {
+  padding: 0;
+  .header-item {
+    background: $erply-blue;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 1em;
+    h2 {
+      padding: .5em;
+      font-size: 20px;
+    }
+  }
+  .topic-item {
+    padding: .25em 0;
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+      h2 {
+        font-size: 18px;
+        text-transform: uppercase;
+        color: $erply-blue;
+      }
+    }
+  }
+}
+
+// Footer
+
+#wrapper-footer {
+  background: $erply-black;
+  min-height: 20vh;
 }

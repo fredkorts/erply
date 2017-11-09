@@ -87,17 +87,29 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
                 </div>
                 <div class="toggle-menu">
-                    <?php wp_nav_menu(
-                        array(
-                            'theme_location'  => 'slider',
-                            'container_class' => 'slide-menu-container',
-                            'container_id'    => 'sliderList',
-                            'menu_class'      => 'slider-nav',
-                            'fallback_cb'     => '',
-                            'menu_id'         => 'slider-menu',
-                            'walker'          => new WP_Bootstrap_Navwalker(),
-                        )
-                    ); ?>
+                    <div class="mobile-wrapper">
+                        <div class="social-block">
+                            <a href="#" class="social" id="facebook"><img src="wp-content/themes/erply/img/facebook.png"></a>
+                            <a href="#" class="social" id="twitter"><img src="wp-content/themes/erply/img/twitter.png"></a>
+                            <a href="#" class="social" id="google"><img src="wp-content/themes/erply/img/google.png"></a>
+                            <a href="#" class="social" id="linkedin"><img src="wp-content/themes/erply/img/linkedin.png"></a>
+                        </div>
+                        <div class="button-wrapper">
+                            <a href="#" class="bttn">Free Demo</a>
+                            <a href="#" class="bttn">Login</a>
+                        </div>
+                        <?php wp_nav_menu(
+                            array(
+                                'theme_location'  => 'slider',
+                                'container_class' => 'slide-menu-container',
+                                'container_id'    => 'sliderList',
+                                'menu_class'      => 'slider-nav',
+                                'fallback_cb'     => '',
+                                'menu_id'         => 'slider-menu',
+                                'walker'          => new WP_Bootstrap_Navwalker(),
+                            )
+                        ); ?>
+                    </div>
                 </div>
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->

@@ -10174,7 +10174,7 @@ a.skip-link {
 #nav-icon {
   width: 40px;
   height: 40px;
-  margin-top: 6px;
+  margin-top: 10px;
   margin-right: 2em;
   z-index: 1001;
   -webkit-transform: rotate(0deg);
@@ -10182,6 +10182,9 @@ a.skip-link {
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer; }
+  @media screen and (min-width: 767px) {
+    #nav-icon {
+      margin-top: 6px; } }
   #nav-icon span {
     display: block;
     position: absolute;
@@ -10225,7 +10228,12 @@ a.skip-link {
 .secondary-menu {
   width: 100%;
   min-height: 20px;
-  background: #0068a4; }
+  background: #0068a4;
+  z-index: 999;
+  display: none; }
+  @media screen and (min-width: 767px) {
+    .secondary-menu {
+      display: block; } }
   .secondary-menu .secondary-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -10258,16 +10266,26 @@ a.skip-link {
   .menu-container .custom-logo-link {
     width: 150px;
     z-index: 1001; }
+  .menu-container #navbarNavDropdown {
+    display: none !important; }
+    @media screen and (min-width: 1199px) {
+      .menu-container #navbarNavDropdown {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important; } }
 
 .main-menu .nav-link:hover {
   text-decoration: underline !important; }
 
 .settings-container {
   float: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   overflow: hidden; }
+  @media screen and (min-width: 767px) {
+    .settings-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
   .settings-container .social-block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -10337,9 +10355,26 @@ a.skip-link {
   position: fixed;
   top: 0;
   z-index: 1000; }
+  .toggle-menu .mobile-wrapper {
+    margin-top: 100px; }
+    .toggle-menu .mobile-wrapper .button-wrapper {
+      text-align: center;
+      margin-bottom: 1em;
+      display: block; }
+      @media screen and (min-width: 767px) {
+        .toggle-menu .mobile-wrapper .button-wrapper {
+          display: none; } }
+    .toggle-menu .mobile-wrapper .social-block {
+      text-align: center;
+      margin: 1em 0;
+      display: block; }
+      @media screen and (min-width: 767px) {
+        .toggle-menu .mobile-wrapper .social-block {
+          display: none; } }
+      .toggle-menu .mobile-wrapper .social-block a {
+        margin: .5em; }
   .toggle-menu #sliderList {
-    display: none;
-    margin-top: 80px; }
+    display: none; }
     .toggle-menu #sliderList #slider-menu {
       list-style-type: none;
       padding-left: 0; }
@@ -10423,7 +10458,7 @@ a.skip-link {
   min-height: 500px; }
 
 .logo-area {
-  background: #faa61a;
+  background: #18b1e7;
   width: 100%;
   padding: 1em 2em;
   min-height: 250px; }
@@ -10492,7 +10527,6 @@ a.skip-link {
     text-decoration: none; }
   .main-story .story-image {
     position: absolute;
-    border: 3px solid #faa61a;
     top: 0;
     left: 0; }
   .main-story .story-headline {
@@ -10500,8 +10534,64 @@ a.skip-link {
     left: 0;
     bottom: -50px; }
     .main-story .story-headline h2 {
-      padding: 1em;
-      font-weight: bold; }
+      margin: 1em;
+      padding-left: 1em;
+      font-weight: bold;
+      border-left: 5px solid #faa61a;
+      text-shadow: 10px 10px 80px #000; }
+
+.secondary-stories {
+  padding-top: 2em; }
+  .secondary-stories .row {
+    margin-right: 0; }
+  .secondary-stories article {
+    margin-bottom: 1em; }
+    .secondary-stories article .article-image {
+      height: 300px;
+      width: 100%;
+      position: relative; }
+      .secondary-stories article .article-image h2 {
+        position: absolute;
+        bottom: 15px;
+        color: white;
+        font-weight: bold;
+        border-left: 5px solid #faa61a;
+        text-shadow: 10px 10px 80px #000;
+        margin: 1em;
+        padding-left: .5em; }
+      .secondary-stories article .article-image p {
+        position: absolute;
+        bottom: 0;
+        color: white;
+        font-style: italic;
+        font-size: 20px;
+        margin: 1em;
+        padding-left: 1.75em;
+        font-weight: 500; }
+
+.popular-topics {
+  padding: 0; }
+  .popular-topics .header-item {
+    background: #18b1e7;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 1em; }
+    .popular-topics .header-item h2 {
+      padding: .5em;
+      font-size: 20px; }
+  .popular-topics .topic-item {
+    padding: .25em 0; }
+    .popular-topics .topic-item a:hover {
+      text-decoration: none; }
+    .popular-topics .topic-item a h2 {
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #18b1e7; }
+
+#wrapper-footer {
+  background: #000000;
+  min-height: 20vh; }
 
 /*
 * Use existing Bootstrap 4 classes and

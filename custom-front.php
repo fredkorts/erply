@@ -92,7 +92,51 @@ get_header(); ?>
                     <a href="#"><h2>10 Reasons why you should be drinking coffee right this moment!</h2></a>
                 </div>
             </div>
-            <div class="secondary-stories"></div>
+            <div class="secondary-stories">
+                <div class="row">
+                    <div class="col-md-8 article-wrapper">
+                        <article>
+                            <a href="#">
+                                <div class="article-image" style='background:url("wp-content/themes/erply/img/collage1.jpg");background-repeat: no-repeat; background-position:center center;'>
+                                    <h2>Tired? Drink more coffee!</h2>
+                                    <p>Author User</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="#">
+                                <div class="article-image" style='background:url("wp-content/themes/erply/img/collage4.jpg");background-repeat: no-repeat; background-position:center center;'>
+                                    <h2>Tired? Drink more coffee!</h2>
+                                    <p>Author User</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="#">
+                                <div class="article-image" style='background:url("wp-content/themes/erply/img/collage5.jpg");background-repeat: no-repeat; background-position:center center;'>
+                                    <h2>Tired? Drink more coffee!</h2>
+                                    <p>Author User</p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-4 popular-topics">
+                        <div class="topic-item header-item"><h2>Popular categories</h2></div>
+                        <div class="topic-item"><a href="#"><h2>Erply iPad POS</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Retail Software</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Swedbank partnership</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>How to influence customers</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Erply iPad POS</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Retail Software</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Swedbank partnership</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>How to influence customers</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Erply iPad POS</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Retail Software</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>Swedbank partnership</h2></a></div>
+                        <div class="topic-item"><a href="#"><h2>How to influence customers</h2></a></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
