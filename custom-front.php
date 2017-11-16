@@ -141,7 +141,6 @@ get_header(); ?>
     </div>
 </div>
 </div><!-- #primary -->
-
 <?php
 //Temporarily commented out for testing purposes!!!!!
 // get_sidebar();

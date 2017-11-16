@@ -22,9 +22,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 </head>
-
+<div class="overlay"></div>
 <body <?php body_class(); ?>>
-
 <div class="hfeed site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
@@ -84,6 +83,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <?php get_search_form( true );?>
                     <div class="search-block">
                         <input type='button' class='search-toggle'/>
+                        <a href="#" class="bttn">Free Demo</a>
                     </div>
                 </div>
                 <div class="toggle-menu">
@@ -95,8 +95,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <a href="#" class="social" id="linkedin"><img src="wp-content/themes/erply/img/linkedin.png"></a>
                         </div>
                         <div class="button-wrapper">
-                            <a href="#" class="bttn">Free Demo</a>
-                            <a href="#" class="bttn">Login</a>
+                            <a href="#registration" class="bttn">Free Demo</a>
                         </div>
                         <?php wp_nav_menu(
                             array(
@@ -116,24 +115,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php endif; ?>
 
 		</nav>
-        <div class="secondary-menu navbar">
-            <div class="secondary-wrapper">
-                <div class="links-wrapper">
-                    <ul>
-                        <li>Call us today at 1-855-463-7759</li>
-                        <li>|</li>
-                        <li>Support</li>
-                        <li>|</li>
-                        <li>Blog</li>
-                        <li>|</li>
-                        <li>Pricing</li>
-                    </ul>
-                </div>
-                <div class="button-wrapper">
-                    <a href="#" class="bttn">Free Demo</a>
-                    <a href="#" class="bttn">Login</a>
-                </div>
-            </div>
-        </div><!-- .site-navigation -->
+<!--        <div class="secondary-menu navbar">-->
+<!--            <div class="secondary-wrapper">-->
+<!--                <div class="links-wrapper">-->
+<!--                    <ul>-->
+<!--                        <li>Call us today at 1-855-463-7759</li>-->
+<!--                        <li>|</li>-->
+<!--                        <li>Support</li>-->
+<!--                        <li>|</li>-->
+<!--                        <li>Blog</li>-->
+<!--                        <li>|</li>-->
+<!--                        <li>Pricing</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="button-wrapper">-->
+<!--                    <a href="registration" class="bttn">Free Demo</a>-->
+<!--                    <a href="#" class="bttn">Login</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div><!-- .site-navigation -->
 
 	</div><!-- .wrapper-navbar end -->

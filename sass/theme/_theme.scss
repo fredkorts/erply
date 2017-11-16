@@ -1,5 +1,25 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-
+.overlay {
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  opacity:0.6;
+  z-index: 10000;
+  top: 0;
+  display: none;
+  div:before{
+    content: " ";
+    background: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 3000px rgba(255,255,255,0.3);
+    filter: blur(10px);
+  }
+}
 //Header
 .site-title {
   display: none;
@@ -14,29 +34,25 @@
   z-index: 1000;
 }
 #nav-icon {
-  width: 40px;
+  width: 30px;
   height: 40px;
   margin-top: 10px;
-  margin-right: 2em;
+  margin-right: 1em;
+  margin-left: 1em;
   z-index: 1001;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
   @media screen and (min-width: $xs_breakpoint) {
-    margin-top: 6px;
+    margin-top: 12px;
+    margin-left: 24px;
   }
   span {
     display: block;
     position: absolute;
-    height: 6px;
+    height: 2px;
     width: 100%;
-    background: white;
+    background: $erply-gray;
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -49,16 +65,19 @@
     transition: .25s ease-in-out;
   }
   span:nth-child(1) {
-    top: 0px;
+    top: 3px;
   }
   span:nth-child(2) {
-    top: 12px;
+    top: 11px;
   }
   span:nth-child(3) {
-    top: 25px;
+    top: 19px;
   }
 }
 #nav-icon.open {
+  span {
+    background: white;
+  }
   span:nth-child(1) {
     top: 14px;
     -webkit-transform: rotate(135deg);
@@ -81,13 +100,13 @@
 .erply-navbar {
   padding: 1em .5em;
   width: 100%;
-  background: $erply-blue;
+  background: #ffffff;
   transition: background-color .3s ease-out;
 }
 .secondary-menu {
   width: 100%;
   min-height: 20px;
-  background: $erply-dark-blue;
+  background: $erply-gray-24;
   z-index: 999;
   display: none;
   @media screen and (min-width: $xs_breakpoint) {
@@ -125,13 +144,32 @@
     font-size: $font__large;
   }
   .custom-logo-link {
-    width: 150px;
+    width: 0px;
+    padding-top: 8px;
+    margin-left: 1.5em;
     z-index: 1001;
+    img {
+      position: relative;
+      bottom: 100px;
+      transition: bottom .3s ease-in;
+    }
+  }
+  .remove-logo {
+    display: none;
   }
   #navbarNavDropdown {
     display: none !important;
     @media screen and (min-width: $md_breakpoint) {
       display: flex !important;
+    }
+    #main-menu {
+      li {
+        a {
+          padding: 0 1.25em;
+          font-size: 16px;
+          color: $erply-gray;
+        }
+      }
     }
   }
 }
@@ -144,16 +182,18 @@
 }
 .settings-container {
   float: right;
-  display: none;
   overflow: hidden;
   @media screen and (min-width: $xs_breakpoint) {
     display: flex;
   }
   .social-block {
-    display: flex;
+    display: none;
     position: relative;
     right: 0;
     overflow: hidden;
+    @media screen and (min-width: $xs_breakpoint) {
+      display: flex;
+    }
     .social {
       flex: 1;
       width: 45px;
@@ -209,7 +249,7 @@
   height: 100%;
   left: -500px;
   transition: left .5s ease-in;
-  background: $erply-dark-blue;
+  background: $erply-blue;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -369,6 +409,9 @@
       margin-bottom: 2em;
       h2 {
         font-size: $font__feed;
+        line-height: 1.3;
+        font-weight: 200;
+        font-size: 18px;
         color: $erply-blue;
         font-family: $font__main;
       }
@@ -484,10 +527,180 @@
     }
   }
 }
-
+// Registration
+.page-template-registration {
+  .main-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .registration-field {
+      margin: 0 auto;
+      width: 300px;
+      position: relative;
+      display: flex;
+      input {
+        border: 2px solid $erply-gray-24;
+        background: transparent;
+        width: 100%;
+        transition: border-color .3s ease;
+        z-index: 999;
+        &:focus {
+          border: 2px solid $erply-blue;
+        }
+      }
+      span {
+        position: absolute;
+        padding: .5em 1.2em;
+        transition: transform .3s ease;
+        color: $erply-gray-24;
+      }
+      .slide {
+        transform: translateX(-125px);
+        transition: transform .3s ease;
+        color: $erply-fall;
+      }
+    }
+  }
+  .secondary-menu {
+    display: none;
+  }
+  .registration-area {
+    border-right: 5px solid $erply-blue;
+    min-height: 50vh;
+  }
+  #registration-form-wrapper {
+    position: relative;
+  }
+  .distraction {
+    min-height: 50vh;
+  }
+  .registration-field {
+    margin-bottom: .5em !important;
+  }
+  .registration-input {
+    height: 40px;
+    padding: .3em 1em;
+  }
+  .registration {
+    padding-top: 9em;
+    h4 {
+      padding: .25em .4em;
+      margin-bottom: 0;
+    }
+  }
+  .employee-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .employee-value {
+      flex: 1;
+      border: 1px solid $erply-gray-24;
+      text-align: center;
+      font-size: 14px;
+      padding: .5em 0;
+      margin: .25em;
+      color: $erply-gray-24;
+      &:hover {
+        text-decoration: none;
+        color: $erply-gray-8;
+        background: $erply-dark-blue;
+        border-color: $erply-dark-blue;
+      }
+    }
+    .selected-value {
+      text-decoration: none;
+      color: $erply-gray-8;
+      background: $erply-dark-blue;
+      border-color: $erply-dark-blue;
+    }
+  }
+}
+#registration {
+  min-height: 50vh;
+  padding-top: 4em;
+  background: white;
+  text-align: center;
+  h2 {
+    color: $erply-blue;
+    font-size: 3.3vw;
+    line-height: 1.2;
+    .fall {
+      color: $erply-fall;
+    }
+  }
+  h4 {
+    color: $erply-gray-64;
+    font-size: 1.125em;
+    margin-bottom: 30px;
+  }
+  p {
+    margin-top: 15px;
+    color: $erply-gray-64;
+    font-style: italic;
+  }
+  .registration-field {
+    margin: 0 auto;
+    width: 300px;
+    position: relative;
+    display: flex;
+    input {
+      border: 2px solid $erply-gray-24;
+      background: transparent;
+      transition: border-color .3s ease;
+      z-index: 1000;
+      &:focus {
+        border: 2px solid $erply-blue;
+      }
+    }
+    span {
+      position: absolute;
+      padding: .5em 1.2em;
+      transition: transform .3s ease;
+      color: $erply-gray-24;
+    }
+    .slide {
+      transform: translateX(-125px);
+      transition: transform .3s ease;
+      color: $erply-fall;
+    }
+  }
+  .employee-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .employee-value {
+      flex: 1;
+      border: 1px solid $erply-gray-24;
+      text-align: center;
+      font-size: 14px;
+      padding: .5em 0;
+      margin: .25em;
+      color: $erply-gray-24;
+      &:hover {
+        text-decoration: none;
+        color: $erply-gray-8;
+        background: $erply-dark-blue;
+        border-color: $erply-dark-blue;
+      }
+    }
+    .selected-value {
+      text-decoration: none;
+      color: $erply-gray-8;
+      background: $erply-dark-blue;
+      border-color: $erply-dark-blue;
+    }
+  }
+  .registration-input {
+    padding: .3em 1em;
+    width: 100%;
+    background: transparent;
+  }
+  .bttn-submit {
+    width: auto;
+  }
+}
 // Footer
 
 #wrapper-footer {
-  background: $erply-black;
-  min-height: 20vh;
+  padding-top: 4em;
 }

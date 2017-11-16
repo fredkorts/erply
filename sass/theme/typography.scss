@@ -1,32 +1,33 @@
-@font-face {
-  font-family: Avenir;
-  src: url(fonts/Avenir.otf);
-  font-weight: normal;
-}
-@font-face {
-  font-family: AvantGarde-Bk;
-  src: url(fonts/ITCAvantGardePro-Bk-1.otf);
-  font-weight: normal;
-}
-@font-face {
-  font-family: AvantGarde-Demi;
-  src: url(fonts/ITCAvantGardePro-Demi-1.otf);
-  font-weight: normal;
-}
-
 $font__small: 14px;
 $font__large: 18px;
 $font__feed:  22px;
 
-$font__main: Avenir;
-$font__heading: AvantGarde-Demi;
+$font__main: Roboto;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
 h1, h2, h3, h4 {
-  font-family: $font__heading;
+  font-family: $font__main;
+  font-weight: 600;
+  color: $erply-gray-64;
+}
+h1 {
+  font-size: 40pt;
+}
+h2 {
+  font-size: 24pt;
+}
+h3 {
+  font-size: 16pt;
+  text-transform: capitalize;
+}
+body {
+  font-family: $font__main;
+  font-size: 16pt;
+  font-weight: 400;
+  color: $erply-gray;
 }
 a, p, b {
   font-family: $font__main;

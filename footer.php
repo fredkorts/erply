@@ -14,10 +14,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php get_sidebar( 'footerfull' ); ?>
 
 <div class="footer-container" id="wrapper-footer">
-    <div class="container">
+    <div class="container" id="registration">
         <div class="row">
-            <div class="col-md-12 contact-wrapper">
-
+            <div class="col-md-12">
+                <h2>Lorem ipsum dolor sit <span class="fall">amet</span></h2>
+                <h4>Point of Sale and Inventory software for Retail. Start your 14-day free trial. No credit card required, includes all available features.</h4>
+                <form action="registration" method="post">
+                    <div class="form-group registration-field">
+                        <span class="sliding-span">E-mail</span>
+                        <input type="text" class="registration-input" name="email"/>
+                        <input type="submit" class="bttn-submit" value="Submit"/>
+                    </div>
+                </form>
+                <p>By clicking 'Create My Account' I agree to <a href="#">Erply Terms of Service</a></p>
             </div>
         </div>
         <div class="row">

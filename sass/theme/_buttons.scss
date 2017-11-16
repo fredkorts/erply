@@ -51,8 +51,11 @@ a.bttn-dark {
   display:inline-block;
   text-align:center;
   font-weight:bold;
+  background: $erply-blue;
   padding: .5em 1em;
-  border:3px solid $primary;
+  border: 1px solid;
+  border-bottom:3px solid;
+  border-color:  $erply-dark-blue;
   z-index: 1002;
   border-radius:2px;
   position:relative;
@@ -89,7 +92,102 @@ a.bttn-dark {
     }
   }
 }
-
+.bttn-submit {
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:inline-block;
+  text-align:center;
+  font-weight:bold;
+  background: $erply-blue !important;
+  padding: .5em 1em;
+  border: 1px solid;
+  border-bottom:3px solid;
+  border-color:  $erply-dark-blue !important;
+  color: white;
+  z-index: 1002;
+  border-radius:2px;
+  position:relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.1);
+  &:before {
+    -webkit-transition:0.5s all ease;
+    transition:0.5s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content:'';
+    background-color:$erply-fall;
+    z-index:-2;
+  }
+  &:hover {
+    text-decoration: none;
+    &:before {
+      -webkit-transition:0.5s all ease;
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+    }
+  }
+  &:focus {
+    &:before {
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+    }
+  }
+}
+.bttn-next, .bttn-submit {
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:inline-block;
+  text-align:center;
+  font-weight:bold;
+  background: $erply-blue;
+  padding: .5em 1em;
+  border: 1px solid;
+  color: white;
+  z-index: 1002;
+  border-radius:2px;
+  position:relative;
+  width: 100%;
+  &:before {
+    -webkit-transition:0.5s all ease;
+    transition:0.5s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content:'';
+    background-color:$erply-fall;
+    z-index:-2;
+  }
+  &:hover {
+    text-decoration: none;
+    &:before {
+      -webkit-transition:0.5s all ease;
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+    }
+  }
+  &:focus {
+    &:before {
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+    }
+  }
+}
 .bttn-dark {
   font-size:18px;
   letter-spacing:2px;
